@@ -12,7 +12,8 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        $products = Book::All();
+        return view('books.index', compact('products'));
     }
 
     /**

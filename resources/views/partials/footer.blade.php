@@ -1,4 +1,8 @@
 
 <footer>
-    <h1>footer</h1>
+
+    <div class="bg-secondary  py-4">
+        <h5 class="text-white text-center">comics</h5>
+    </div>
+
 </footer>
