@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\Pagecontroller;
+use App\Http\Controllers\BooksController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +29,8 @@ Route::get('/', [Pagecontroller::class, 'index'])->name('homePage');
 Route::get('/newPage', [Pagecontroller::class, 'newPage'])->name('newPage');
 
 
+////////////////////////////////////
 
 
+// route CRUD
+Route::resource('books', BooksController::class);
