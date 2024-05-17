@@ -5,7 +5,9 @@
 @section('content')
 
     <div class="mb-5">
-        <h1 class="text-center my-5">Dettagli Prodotto</h1>
+        <div class="text-center text-secondary my-5">
+            <h1 class="text-center">Dettagli Prodotto</h1>
+        </div>
 
         <div class="d-flex justify-content-center">
             <div class="container d-flex justify-content-end me-5">
@@ -13,7 +15,7 @@
             </div>
 
             <div class="container d-flex flex-column justify-content-center">
-                <h4 class="fs-2">{{ $book->title }}</h4>
+                <h3 class="fs-2">{{ $book->title }}</h3>
                 <p class="fw-semibold fs-5 mt-5">{{ $book->price }}</p>
                 <p class="fw-semibold fs-5">{{ $book->series }}</p>
                 <p class="fw-semibold fs-5">{{ $book->sale_date }}</p>

@@ -52,7 +52,8 @@ class BooksController extends Controller
      */
     public function edit(string $id)
     {
-       
+        $book = Book::find($id);
+        return view('books.edit', compact('book'));
     }
 
     /**
@@ -60,7 +61,11 @@ class BooksController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $book = Book::find($id);
+        $form_data = $request->All();
+        $book->update($form_data);
+
+        return redirect()->route('books.show', $book);
     }
 
     /**
@@ -68,6 +73,6 @@ class BooksController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
     }
 }

@@ -18,10 +18,10 @@
                     <p>{{ $item->type }}</p>
                 </div>
 
-                <div class="text-center pb-4">
+                <div class="text-center d-flex justify-content-center pb-4">
                     <a class="btn btn-success" href="{{ route('books.show', $item->id) }}"><i class="fa-solid fa-eye"></i></a>
                     <a class="btn btn-warning mx-3" href="{{ route('books.edit', $item->id) }}"><i class="fa-solid fa-pencil"></i></a>
-                    <a class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                    <a class="btn btn-danger mx-3" href=""><i class="fa-solid fa-trash"></i></a>
                 </div>
             </div>
         @endforeach
