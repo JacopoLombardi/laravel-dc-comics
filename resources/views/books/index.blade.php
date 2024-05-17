@@ -5,6 +5,12 @@
 
     <h1 class="text-center my-5">Fumetti</h1>
 
+    @if(session('message'))
+        <div class="container d-flex justify-content-center alert alert-danger w-50">
+            {{ session('message') }}
+        </div>
+    @endif
+
     <div class="container d-flex justify-content-center flex-wrap my-5">
 
         @foreach ($products as $item)
@@ -21,7 +27,11 @@
                 <div class="text-center d-flex justify-content-center pb-4">
                     <a class="btn btn-success" href="{{ route('books.show', $item->id) }}"><i class="fa-solid fa-eye"></i></a>
                     <a class="btn btn-warning mx-3" href="{{ route('books.edit', $item->id) }}"><i class="fa-solid fa-pencil"></i></a>
-                    <a class="btn btn-danger mx-3" href=""><i class="fa-solid fa-trash"></i></a>
+                    <form action="{{ route('books.destroy', $item->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                    </form>
                 </div>
             </div>
         @endforeach
