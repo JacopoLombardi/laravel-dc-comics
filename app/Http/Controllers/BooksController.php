@@ -29,8 +29,13 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-      $form_data = $request->all();
-      dd($form_data);
+        $form_data = $request->all();
+
+        $new_book = new Book();
+        $new_book->fill($form_data);
+        $new_book->save();
+
+        return redirect()->route('books.show', $new_book);
     }
 
     /**
@@ -47,7 +52,7 @@ class BooksController extends Controller
      */
     public function edit(string $id)
     {
-        //
+       
     }
 
     /**
