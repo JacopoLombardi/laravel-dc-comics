@@ -7,7 +7,7 @@
     <div class="container my-5">
         <h1 class="text-center">Form per Inserire un Fumetto</h1>
 
-        <form class="col-6 mt-5" action="{{ route('books.store') }}" method="POST">
+        <form class="col-6 mt-5" action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div>
                 <label class="fw-semibold">Titolo</label>

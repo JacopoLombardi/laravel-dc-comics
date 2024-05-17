@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Book;
+use App\Models\Comic;
 
-class BooksController extends Controller
+class ComicsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Book::All();
-        return view('books.index', compact('products'));
+        $products = Comic::All();
+        return view('comics.index', compact('products'));
     }
 
     /**
@@ -21,7 +21,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('books.create');
+        return view('comics.create');
     }
 
     /**
@@ -31,11 +31,11 @@ class BooksController extends Controller
     {
         $form_data = $request->all();
 
-        $new_book = new Book();
-        $new_book->fill($form_data);
-        $new_book->save();
+        $new_comic = new Comic();
+        $new_comic->fill($form_data);
+        $new_comic->save();
 
-        return redirect()->route('books.show', $new_book);
+        return redirect()->route('comics.show', $new_comic);
     }
 
     /**
@@ -43,8 +43,8 @@ class BooksController extends Controller
      */
     public function show(string $id)
     {
-        $book = Book::find($id);
-        return view('books.show', compact('book'));
+        $comic = Comic::find($id);
+        return view('comics.show', compact('comic'));
     }
 
     /**
@@ -52,8 +52,8 @@ class BooksController extends Controller
      */
     public function edit(string $id)
     {
-        $book = Book::find($id);
-        return view('books.edit', compact('book'));
+        $comic = Comic::find($id);
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -61,11 +61,11 @@ class BooksController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $book = Book::find($id);
+        $comic = Comic::find($id);
         $form_data = $request->All();
-        $book->update($form_data);
+        $comic->update($form_data);
 
-        return redirect()->route('books.show', $book);
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -73,9 +73,9 @@ class BooksController extends Controller
      */
     public function destroy(string $id)
     {
-        $book = Book::find($id);
+        $comic = Comic::find($id);
 
-        $book->delete();
-        return redirect()->route('books.index')->with('message', 'Il Fumetto ' . $book->title . ' è stato eliminato');
+        $comic->delete();
+        return redirect()->route('comics.index')->with('message', 'Il Fumetto ' . $comic->title . ' è stato eliminato');
     }
 }

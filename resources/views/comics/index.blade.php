@@ -25,9 +25,9 @@
                 </div>
 
                 <div class="text-center d-flex justify-content-center pb-4">
-                    <a class="btn btn-success" href="{{ route('books.show', $item->id) }}"><i class="fa-solid fa-eye"></i></a>
-                    <a class="btn btn-warning mx-3" href="{{ route('books.edit', $item->id) }}"><i class="fa-solid fa-pencil"></i></a>
-                    <form action="{{ route('books.destroy', $item->id) }}" method="POST">
+                    <a class="btn btn-success" href="{{ route('comics.show', $item->id) }}"><i class="fa-solid fa-eye"></i></a>
+                    <a class="btn btn-warning mx-3" href="{{ route('comics.edit', $item->id) }}"><i class="fa-solid fa-pencil"></i></a>
+                    <form action="{{ route('comics.destroy', $item->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash-can"></i></button>

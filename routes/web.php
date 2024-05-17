@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\Pagecontroller;
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\ComicsController;
 
 
 /*
@@ -33,4 +33,4 @@ Route::get('/newPage', [Pagecontroller::class, 'newPage'])->name('newPage');
 
 
 // route CRUD
-Route::resource('books', BooksController::class);
+Route::resource('comics', ComicsController::class);

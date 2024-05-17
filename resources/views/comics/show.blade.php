@@ -11,18 +11,18 @@
 
         <div class="d-flex justify-content-center">
             <div class="container d-flex justify-content-end me-5">
-                <img src="{{ $book->image }}" alt="{{ $book->title }}">
+                <img src="{{ $comic->image }}" alt="{{ $comic->title }}">
             </div>
 
             <div class="container d-flex flex-column justify-content-center">
-                <h3 class="fs-2">{{ $book->title }}</h3>
-                <p class="fw-semibold fs-5 mt-5">{{ $book->price }}</p>
-                <p class="fw-semibold fs-5">{{ $book->series }}</p>
-                <p class="fw-semibold fs-5">{{ $book->sale_date }}</p>
-                <p class="fw-semibold fs-5">{{ $book->type }}</p>
+                <h3 class="fs-2">{{ $comic->title }}</h3>
+                <p class="fw-semibold fs-5 mt-5">{{ $comic->price }}</p>
+                <p class="fw-semibold fs-5">{{ $comic->series }}</p>
+                <p class="fw-semibold fs-5">{{ $comic->sale_date }}</p>
+                <p class="fw-semibold fs-5">{{ $comic->type }}</p>
 
                 <div class="mt-5">
-                    <a class="btn btn-danger" href="{{ route('books.index') }}">Torna Indietro</a>
+                    <a class="btn btn-danger" href="{{ route('comics.index') }}">Torna Indietro</a>
                 </div>
             </div>
         </div>
