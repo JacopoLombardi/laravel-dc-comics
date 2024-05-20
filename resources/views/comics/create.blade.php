@@ -5,7 +5,17 @@
 @section('content')
 
     <div class="container my-5">
-        <h1 class="text-center">Form per Inserire un Fumetto</h1>
+        <h1 class="text-center">Inserire un Fumetto</h1>
+
+        @if ($errors->any())
+            <div>
+                @foreach ($errors->all() as $error)
+                    {{ $error }}
+                @endforeach
+
+            </div>
+
+        @endif
 
         <form class="col-6 mt-5" action="{{ route('comics.store') }}" method="POST">
             @csrf

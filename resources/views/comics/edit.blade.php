@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container my-5">
-        <h2 class="text-center text-secondary mb-3">Form per Modificare il Fumetto</h2>
+        <h2 class="text-center text-secondary mb-3">Modificare il Fumetto</h2>
         <h1 class="text-center">"{{ $comic->title }}"</h1>
 
         <form class="col-6 mt-5" action="{{ route('comics.update', $comic) }}" method="POST">
